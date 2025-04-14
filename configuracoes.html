@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configurações - Sistema de Controle de Serviços</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #6699cc;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #ddd;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav ul li a[aria-current="page"] {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .content {
+      background-color: #3366cc;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    .form-container {
+      background-color: #e6e6e6;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    select, input[type="checkbox"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      background-color: #6699cc;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn:hover {
+      background-color: #557bb5;
+    }
+
+    .btn-reset {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .form-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Configurações do Sistema</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Cadastro</a></li>
+        <li><a href="relatorio.html">Relatório</a></li>
+        <li><a href="ajuda.html">Ajuda</a></li>
+        <li><a href="configuracoes.html" aria-current="page">Configurações</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <div class="form-container">
+        <h2 class="form-title">Preferências do Sistema</h2>
+        <form id="config-form" aria-label="Formulário de configurações">
+          <div class="form-group">
+            <label for="theme">Tema</label>
+            <select id="theme" name="theme">
+              <option value="light">Claro</option>
+              <option value="dark">Escuro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="language">Idioma</label>
+            <select id="language" name="language">
+              <option value="pt-br">Português</option>
+              <option value="en-us">Inglês</option>
+              <option value="es">Espanhol</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="font-size">Tamanho da Fonte</label>
+            <select id="font-size" name="font-size">
+              <option value="normal">Normal</option>
+              <option value="large">Grande</option>
+              <option value="x-large">Muito Grande</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="high-contrast">Alto Contraste</label>
+            <input type="checkbox" id="high-contrast" name="high-contrast" aria-label="Ativar alto contraste">
+          </div>
+
+          <div class="form-group">
+            <label for="screen-reader">Leitor de Tela</label>
+            <input type="checkbox" id="screen-reader" name="screen-reader" aria-label="Ativar suporte a leitor de tela">
+          </div>
+
+          <div class="form-group">
+            <label for="subtitle-toggle">Legendas para Conteúdo Auditivo</label>
+            <input type="checkbox" id="subtitle-toggle" name="subtitle-toggle" aria-label="Ativar legendas automáticas">
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn" title="Salvar Configurações">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button type="reset" class="btn btn-reset" title="Restaurar Padrões">
+              <i class="fas fa-undo"></i> Restaurar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ <script src="preferencias.js" defer></script>
+</body>
+
+
+</html>
